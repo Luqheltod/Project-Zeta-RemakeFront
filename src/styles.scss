@@ -1,11 +1,14 @@
 
+@import "primeng/resources/themes/soho-dark/theme.css";
+@import "primeng/resources/primeng.css";
+
 body{
-    background-color:var(--color-fondo);;
+    background-color:var(--color-fondo);
 }
 
 
 :root {
     --color-fondo: black;
     --color-zeta-rojo:#b30c0c;
-    
+    --color-texto:rgba(239, 242, 239, 0.943);
   }
