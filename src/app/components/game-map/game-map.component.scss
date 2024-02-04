@@ -1,0 +1,21 @@
+.centrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .boton-mapa {
+    padding: 10px 20px; /* Ajusta el padding según sea necesario */
+    font-size: 14px; /* Ajusta el tamaño de la fuente según sea necesario */
+    background-color: #3498db; /* Color de fondo del botón */
+    color: #ffffff; /* Color del texto del botón */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .boton-mapa:hover {
+    background-color: #2980b9; /* Cambio de color al pasar el mouse */
+  }
