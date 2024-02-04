@@ -13,4 +13,12 @@ import { CommonModule } from '@angular/common';
 })
 export class StageContainerComponent {
 
+  //Los injects de los servicios 
+
+  //Llamamos akita con cada cosa 
+
+  //recibimos las movidas de vuelta de cada componente y se cambian lo que le pasamos
+
+
+
 }
