@@ -7,12 +7,12 @@ const routeConfig: Routes = [
     {
       path: '',
       component: StartScreenComponent,
-      title: 'Proyecto Zeta',
+      title: 'Proyect Zeta',
     },
     {
       path: 'leproject',
       component: StageContainerComponent,
-      title: 'Pesadilla',
+      title: 'Proyect Zeta ',
     }
   ];
   export default routeConfig;
