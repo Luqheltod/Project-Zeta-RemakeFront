@@ -13,4 +13,14 @@ import { CommonModule } from '@angular/common';
 })
 export class GameMapComponent {
 
+  buttonTestMsg = "";
+  showMap: boolean = false;
+
+  ngOnInit() {
+    this.buttonTestMsg = "Mostrar Mapa"
+  }
+  toggleMap(){
+    this.showMap =!this.showMap;
+    this.buttonTestMsg = this.showMap ? "Ocultar Mapa" : "Mostrar Mapa";
+  }
 }

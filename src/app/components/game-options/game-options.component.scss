@@ -6,16 +6,22 @@
   }
   
   .boton-mapa {
-    padding: 10px 20px; /* Ajusta el padding según sea necesario */
-    font-size: 14px; /* Ajusta el tamaño de la fuente según sea necesario */
-    background-color: #3498db; /* Color de fondo del botón */
-    color: #ffffff; /* Color del texto del botón */
-    border: none;
-    border-radius: 5px;
+    border-top: none;
+    border-left: none;
     cursor: pointer;
-    transition: background-color 0.3s;
+    padding: 10px 25px;
+    border-radius: 5px;
+    background-color: var(--color-zeta-rojo);
+    color: var(--color-texto);
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
   }
   
   .boton-mapa:hover {
-    background-color: #2980b9; /* Cambio de color al pasar el mouse */
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   }

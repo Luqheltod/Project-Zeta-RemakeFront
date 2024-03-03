@@ -9,4 +9,17 @@ import { Component } from '@angular/core';
 })
 export class GameOptionsComponent {
 
+
+  buttonTestMsg = "";
+  showActions: boolean = false;
+
+  ngOnInit() {
+    this.buttonTestMsg = "Mostrar Acciones"
+  }
+  toggleActions(){
+    if(!this.showActions){
+    this.showActions =!this.showActions;
+    this.buttonTestMsg = this.showActions ? "Toma tu decisión" : "Mostrar Acciones";
+    }
+  }
 }

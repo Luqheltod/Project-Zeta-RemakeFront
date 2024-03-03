@@ -1,3 +1,9 @@
 <div class="centrar">
-    <button class="boton-mapa">Mostrar Mapa</button>
+    <button class="boton-mapa" (click)="toggleActions()">{{buttonTestMsg}}</button>
   </div>
+
+  @if (showActions) {
+    <div >
+      <p> ACCIONES TU </p>
+    </div>
+  }

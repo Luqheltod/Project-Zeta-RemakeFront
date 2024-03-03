@@ -1,7 +1,15 @@
 <div class="centrar">
-    <button class="boton-mapa">Mostrar Mapa</button>
+    <button class="boton-mapa" (click)="toggleMap()">{{buttonTestMsg}}</button>
 
 
   </div>
+
+    @if (showMap) {
+      <div >
+        <p> TOMA MORENO </p>
+      </div>
+    }
+    
+ 
 
   
