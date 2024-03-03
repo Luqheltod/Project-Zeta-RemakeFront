@@ -1,15 +1,18 @@
+
+
 <div class="centrar">
     <button class="boton-mapa" (click)="toggleMap()">{{buttonTestMsg}}</button>
-
-
   </div>
 
     @if (showMap) {
-      <div >
-        <p> TOMA MORENO </p>
+      <div class="centrar text-map"><p> {{flat}} </p></div>
+      <div class="center-container">
+        <div class="image-container">
+          <img src={{locationImg}}{{map}} alt="Mapa del tugurio" />
+        </div>
       </div>
     }
     
- 
+
 
   

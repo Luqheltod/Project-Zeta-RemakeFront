@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 
@@ -12,9 +12,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './game-map.component.scss'
 })
 export class GameMapComponent {
-
+  locationImg : string ="assets/img/";
   buttonTestMsg = "";
   showMap: boolean = false;
+  @Input() flat : string = 'Piso 3 Habitación 2';
+  @Input() map : string = 'habitacion1.png';
 
   ngOnInit() {
     this.buttonTestMsg = "Mostrar Mapa"
