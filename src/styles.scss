@@ -1,14 +1,17 @@
 
 @import "primeng/resources/themes/soho-dark/theme.css";
 @import "primeng/resources/primeng.css";
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 body{
     background-color:var(--color-fondo);
 }
 
-
+.material-icons{
+    font-family: 'Material Icons' !important;
+}
 :root {
     --color-fondo: black;
     --color-zeta-rojo:#b30c0c;
     --color-texto:rgba(239, 242, 239, 0.943);
-  }
+}
