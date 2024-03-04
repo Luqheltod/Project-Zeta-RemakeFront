@@ -1,0 +1,16 @@
+.disable{
+    color: grey;
+    background-color: black;
+    cursor:not-allowed;
+}
+
+.restbutton{
+    cursor: cell;
+    position:fixed;
+    top:20px;
+    left: 250px;
+    
+}
+.restbutton:hover {
+    opacity: 0.5 !important;
+  }

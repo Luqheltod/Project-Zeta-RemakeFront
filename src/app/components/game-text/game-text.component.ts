@@ -29,7 +29,7 @@ export class GameTextComponent {
   ngAfterViewInit() {
     this.initTextAnimation();
   }
- 
+
 
   initTextAnimation() {
   

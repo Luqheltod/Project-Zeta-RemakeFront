@@ -2,18 +2,14 @@
     <button class="boton-actions" (click)="toggleActions()">{{buttonTestMsg}}</button>
   </div>
 
-  <p>
-    <span> Energia : <mat-icon style="color:aqua;">flash_on</mat-icon> {{energy}} </span> 
-    <span>Vida :  </span>  <mat-icon style="color:red;">favorite</mat-icon>  {{health}} 
-   
-  </p> 
+
 
   @if (showActions) {
 
     @for (option of stage.options; track option.idOptions) {
       <div >
         <button type="button" class="botonera" >{{option.textOption}}</button> 
-         
+      
       </div>
     }
 

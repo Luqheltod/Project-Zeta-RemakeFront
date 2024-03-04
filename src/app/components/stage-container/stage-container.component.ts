@@ -4,11 +4,17 @@ import { GameTextComponent } from '../game-text/game-text.component';
 import { GameOptionsComponent } from '../game-options/game-options.component';
 import { CommonModule } from '@angular/common';
 import { Stage, Option } from '../../models/stage';
+import { GameEnergylifeComponent } from '../game-energylife/game-energylife.component';
+import { slideInAnimation } from '../../shared/animation';
 
 @Component({
   selector: 'app-stage-container',
   standalone: true,
-  imports: [GameMapComponent,GameTextComponent,GameOptionsComponent,CommonModule],
+  imports: [GameMapComponent,GameTextComponent,GameOptionsComponent,CommonModule,GameEnergylifeComponent],
+  animations: [
+    slideInAnimation,
+    // animation triggers go here
+  ],
   templateUrl: './stage-container.component.html',
   styleUrl: './stage-container.component.scss'
 })

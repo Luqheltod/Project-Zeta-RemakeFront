@@ -27,14 +27,6 @@
   }
 
 
-
-  .a{
-    background: #333;
-}
-.b{
-    background: rgb(0, 0, 0);
-}
-
 .botonera{
     cursor: pointer;
     text-align: left;
@@ -56,24 +48,4 @@
 }
   
 
-.options{
-    max-height: 537px;
-    
-}
 
-.disable{
-    color: grey;
-    background-color: black;
-    cursor:not-allowed;
-}
-
-.restbutton{
-    cursor: cell;
-    position:fixed;
-    top:20px;
-    left: 250px;
-    
-}
-.restbutton:hover {
-    opacity: 0.5 !important;
-  }
