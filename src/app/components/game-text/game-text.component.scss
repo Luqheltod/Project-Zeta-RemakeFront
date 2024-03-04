@@ -1,5 +1,6 @@
 .caja-con-scroll {
-   
+    margin: auto;
+    max-width: 1500px;
     color: var(--color-texto);
     padding: 20px;
     width: 100%;
@@ -7,3 +8,6 @@
     box-sizing: border-box;
     border: 0.5px solid  var(--color-zeta-rojo);
   }
+
+  
+  

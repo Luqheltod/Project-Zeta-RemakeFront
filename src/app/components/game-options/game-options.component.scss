@@ -5,7 +5,7 @@
     
   }
   
-  .boton-mapa {
+  .boton-actions {
     border-top: none;
     border-left: none;
     cursor: pointer;
@@ -21,7 +21,59 @@
     transition: all 0.3s ease;
   }
   
-  .boton-mapa:hover {
+  .boton-actions:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+
+
+
+  .a{
+    background: #333;
+}
+.b{
+    background: rgb(0, 0, 0);
+}
+
+.botonera{
+    cursor: pointer;
+    text-align: left;
+    display:block;
+    width: 20%;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top:2%;
+    margin-bottom: 2%;
+    padding:1%;
+    background-color: #8B271F;
+    overflow: overlay;
+}
+
+@media only screen and (max-width: 767px) {
+  .botonera {
+    width: 80%; 
+}
+}
+  
+
+.options{
+    max-height: 537px;
+    
+}
+
+.disable{
+    color: grey;
+    background-color: black;
+    cursor:not-allowed;
+}
+
+.restbutton{
+    cursor: cell;
+    position:fixed;
+    top:20px;
+    left: 250px;
+    
+}
+.restbutton:hover {
+    opacity: 0.5 !important;
   }

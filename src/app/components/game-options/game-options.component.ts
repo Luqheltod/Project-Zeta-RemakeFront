@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Option } from '../../models/option';
+import { Stage } from '../../models/stage';
 
 @Component({
   selector: 'app-game-options',
@@ -10,6 +12,7 @@ import { Component } from '@angular/core';
 export class GameOptionsComponent {
 
 
+  @Input() stage! : Stage;
   buttonTestMsg = "";
   showActions: boolean = false;
 
@@ -23,3 +26,5 @@ export class GameOptionsComponent {
     }
   }
 }
+
+

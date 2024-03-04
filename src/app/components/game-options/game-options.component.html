@@ -1,9 +1,17 @@
 <div class="centrar">
-    <button class="boton-mapa" (click)="toggleActions()">{{buttonTestMsg}}</button>
+    <button class="boton-actions" (click)="toggleActions()">{{buttonTestMsg}}</button>
   </div>
 
   @if (showActions) {
-    <div >
-      <p> ACCIONES TU </p>
-    </div>
+
+    @for (option of stage.options; track option.idOptions) {
+      <div >
+        <button type="button" class="botonera" >{{option.textOption}}</button> 
+         
+      </div>
+    }
+
+    
   }
+
+  
