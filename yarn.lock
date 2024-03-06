@@ -2284,6 +2284,16 @@
     "@material/theme" "15.0.0-canary.7f224ddd4.0"
     tslib "^2.1.0"
 
+"@ngneat/elf-entities@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@ngneat/elf-entities/-/elf-entities-5.0.1.tgz#bd981a2b33bf7c6a6619aacc5424c61eb48462d1"
+  integrity sha512-yUvZ8SxW2379nRRO8EDRhzd0cbjAQctVWcl9Lfi36IUI+d9ifQrYxaHSDVITIajB4gAgA0qJhuYwRU5L8FAMuA==
+
+"@ngneat/elf@^2.5.1":
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/@ngneat/elf/-/elf-2.5.1.tgz#bf87146ab4ee9bd9364f03b5cfad6ce180cfb343"
+  integrity sha512-13BItNZFgHglTiXuP9XhisNczwQ5QSzH+imAv9nAPsdbCq/3ortqkIYRnlxB8DGPVcuIjLujQ4OcZa+9QWgZtw==
+
 "@ngtools/webpack@17.2.2":
   version "17.2.2"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-17.2.2.tgz#e755e35c2e3c887227ecebc1c33d290f3f7b042f"
