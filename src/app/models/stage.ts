@@ -1,7 +1,7 @@
 import { Option,createOption } from "./option";
 
 export interface Stage {
-idStage?: number | undefined;
+idStage: number;
 text?: string;
 mapName?: string;
 flat?: string;

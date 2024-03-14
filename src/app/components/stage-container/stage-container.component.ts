@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { GameMapComponent } from '../game-map/game-map.component';
 import { GameTextComponent } from '../game-text/game-text.component';
 import { GameOptionsComponent } from '../game-options/game-options.component';
 import { CommonModule } from '@angular/common';
-import { Stage, Option } from '../../models/stage';
+
+
 import { GameEnergylifeComponent } from '../game-energylife/game-energylife.component';
 import { slideInAnimation } from '../../shared/animation';
+import { Stage } from '../../models/stage';
+import { Option } from '../../models/option';
+import { StageRepository } from '../../store/stage.repository';
+import { StageService } from '../../service/stage.service';
 
 @Component({
   selector: 'app-stage-container',
@@ -19,8 +24,17 @@ import { slideInAnimation } from '../../shared/animation';
   styleUrl: './stage-container.component.scss'
 })
 export class StageContainerComponent {
+  
+  private readonly stageService = inject(StageService);
+ 
 
+  constructor( public stageRepository: StageRepository) { }
 
+  
+  ngOnInit() {
+    this.stageService.getStageByIdStage(1);
+  }
+/*
   stage : Stage = {
     "idStage": 1,
     "text": "Stage 1",
@@ -58,8 +72,8 @@ export class StageContainerComponent {
     "finalStage": false,
     "restModifier": 1
   }
-
-  options : Option[] | undefined =  [
+/*
+  options : Option =  [
     {
       "idOptions": 1,
       "idStage": 1,
@@ -87,7 +101,9 @@ export class StageContainerComponent {
       "toStage": 4,
       "instadeath": false
     }
-  ];
+  ];*/
+
+
   //Los injects de los servicios 
 
   //Llamamos akita con cada cosa 
