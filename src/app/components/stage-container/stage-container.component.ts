@@ -34,11 +34,13 @@ export class StageContainerComponent {
   
   ngOnInit() {
 
-    this.stageService.getStageByIdStageAndTapInElf(1).subscribe(stage => {
+    this.stageService.getStageByIdStageAndTapInElf(1).subscribe();
+
+    /*this.stageService.getStageByIdStageAndTapInElf(1).subscribe(stage => {
       this.stage = stage;
       this.stageRepository.updateStage(this.stage);
-      this.stageRepository.setStage(1);
-    });
+      this.stageRepository.getStage();
+    });*/
 
    /* this.stageService.getStageByIdStageAndTapInElf(1).subscribe(stage => this.stage = stage);
     

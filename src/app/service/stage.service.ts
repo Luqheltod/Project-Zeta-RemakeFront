@@ -13,11 +13,16 @@ export class StageService {
 
   getStageByIdStageAndTapInElf(idStage : number): Observable<Stage> {
     idStage = 1;
-    return this.http.get<Stage>(`http://localhost:8080/projectz/stage/${idStage}`);
+    return this.http.get<Stage>(`http://localhost:8080/projectz/stage/${idStage}`).pipe( 
+      tap((stage) => {
+      this.stageRepository.updateStage(stage);
+    })
+  );
+}
   }
 
 
 
-}
+
 
 
