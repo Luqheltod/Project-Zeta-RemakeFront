@@ -2,12 +2,12 @@ import { Option,createOption } from "./option";
 
 export interface Stage {
 idStage: number;
-text?: string;
-mapName?: string;
-flat?: string;
-options?: Array<Option>;
-finalStage?: boolean;
-restModifier?: number;
+text: string;
+mapName: string;
+flat: string;
+options: Array<Option>;
+finalStage: boolean;
+restModifier: number;
 }
 
 export function createStage(stage: Stage): Stage {

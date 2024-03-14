@@ -30,12 +30,25 @@ export class StageContainerComponent {
 
   constructor( public stageRepository: StageRepository) { }
 
+  stage! : Stage ;
   
   ngOnInit() {
-    this.stageService.getStageByIdStage(1);
+
+    this.stageService.getStageByIdStageAndTapInElf(1).subscribe(stage => {
+      this.stage = stage;
+      this.stageRepository.updateStage(this.stage);
+      this.stageRepository.setStage(1);
+    });
+
+   /* this.stageService.getStageByIdStageAndTapInElf(1).subscribe(stage => this.stage = stage);
+    
+    this.stageRepository.updateStage(this.stage);
+    this.stageRepository.setStage(1);
+*/
+    console.log(this.stage);
   }
-/*
-  stage : Stage = {
+
+  stage2 : Stage = {
     "idStage": 1,
     "text": "Stage 1",
     "mapName": "map1.png",

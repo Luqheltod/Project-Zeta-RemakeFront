@@ -13,9 +13,9 @@ import { Stage } from '../../models/stage';
 export class GameOptionsComponent {
 
 
+  @Input() stage!:Stage;
 
 
-  @Input() stage! : Stage;
   buttonTestMsg = "";
   showActions: boolean = false;
 
