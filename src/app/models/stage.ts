@@ -7,7 +7,7 @@ mapName?: string;
 flat?: string;
 options?: Array<Option>;
 finalStage?: boolean;
-restModifier: number;
+restModifier?: number;
 }
 
 export function createStage(stage: Stage): Stage {
@@ -22,4 +22,4 @@ return {
 };
 }
 
-export { Option };
+
