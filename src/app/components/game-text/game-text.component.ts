@@ -28,8 +28,8 @@ export class GameTextComponent {
 
   
 constructor(private sanitizer: DomSanitizer) { }
-ngAfterViewInit(){
-  this.initTextAnimation();
+ngOninit(){
+  
 }
 
   ngOnChanges(changes: SimpleChanges){
@@ -41,11 +41,8 @@ ngAfterViewInit(){
       }
   }
 
-  
   initTextAnimation() {
-    if (!this.caja || !this.text || this.text.length === 0) {
-      return; // Salir si el elemento o el texto no están disponibles
-    }
+    
     if (this.typedInstance) {
       this.typedInstance.destroy(); // Destruye la instancia actual antes de iniciar una nueva
     }
@@ -57,7 +54,6 @@ ngAfterViewInit(){
         showCursor: false, // Ocultar el cursor
         onComplete: (self: Typed) => {
           this.typedInstance = self;
-
         }
       
       }
