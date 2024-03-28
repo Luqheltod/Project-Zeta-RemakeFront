@@ -45,13 +45,21 @@ ngOninit(){
     
     if (this.typedInstance) {
       this.typedInstance.destroy(); // Destruye la instancia actual antes de iniciar una nueva
+      this.caja.nativeElement.classList.add('oculto');
     }
   
     if(this.text.length >0){
+      
       this.optionsBoxText = {
         strings: [this.text],
         typeSpeed: 20, // Velocidad de escritura (milisegundos)
         showCursor: false, // Ocultar el cursor
+        onBegin: (self: Typed) => {
+          setTimeout(() => {
+            this.caja.nativeElement.classList.remove('oculto'); // Muestra el elemento
+          }, 500);
+          },
+
         onComplete: (self: Typed) => {
           this.typedInstance = self;
         }
@@ -63,7 +71,7 @@ ngOninit(){
         this.completeText();
       });
     }
-    
+
   }
 
   completeText() {
