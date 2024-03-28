@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import Typed from 'typed.js';
+import { Component, ElementRef, Input, SimpleChanges, ViewChild } from '@angular/core';
+import Typed, { TypedOptions } from 'typed.js';
+import { StageRepository } from '../../store/stage.repository';
+import { Stage } from '../../models/stage';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-game-text',
@@ -13,42 +16,60 @@ export class GameTextComponent {
 
   @ViewChild('caja') caja!: ElementRef;
   typedInstance: Typed | undefined
-  //Se lo mete el papa o lo recupero de aqui ya vere 
-  texto: string = "Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la cajaTexto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la c to dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la cajaTexto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la c to dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la cajaTexto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la c to dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la cajaTexto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto to dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la cajaTexto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la c to dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la cajaTexto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la c to dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la cajaTexto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la c to dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la cajaTexto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la c to dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la cajaTexto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la c to dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la cajaTexto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la c to dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la cajaTexto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la c to dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la cajaTexto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la c to dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la cajaTexto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la c to dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la cajaTexto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la c to dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la cajaTexto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la c to dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la cajaTexto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la caja  Texto dentro de la c dentro de la caja  Texto dentro de la c  ";
+
+  @Input() text!:string;
+  textoHtml? : SafeHtml;
+
+  optionsBoxText: TypedOptions = { };
+
+
+
   
-  optionsBoxText = {
-    strings: [this.texto],
-    typeSpeed: 5, // Velocidad de escritura (milisegundos)
-    showCursor: false, // Ocultar el cursor
-    onComplete: (self: Typed) => {
-      this.typedInstance = self;
-    }
+constructor(private sanitizer: DomSanitizer) { }
+ngOninit(){
+  
+}
 
-  }
-
-  ngAfterViewInit() {
+  ngOnChanges(changes: SimpleChanges){
+      if(changes['text']){
+    var textoSanitizado = this.sanitizer.bypassSecurityTrustHtml(this.text);
+    this.textoHtml = textoSanitizado;
     this.initTextAnimation();
+      }
   }
-
 
   initTextAnimation() {
+    if (this.typedInstance) {
+      this.typedInstance.destroy(); // Destruye la instancia actual antes de iniciar una nueva
+    }
   
-    this.typedInstance = new Typed('.caja-con-scroll', this.optionsBoxText);
-    //Evento click en el dom para terminar el texto
-    this.caja.nativeElement.addEventListener('click', () => {
-      this.completeText();
-    });
+    if(this.text.length >0){
+      this.optionsBoxText = {
+        strings: [this.text],
+        typeSpeed: 20, // Velocidad de escritura (milisegundos)
+        showCursor: false, // Ocultar el cursor
+        onComplete: (self: Typed) => {
+          this.typedInstance = self;
+        }
+      
+      }
+      this.typedInstance = new Typed('.caja-con-scroll', this.optionsBoxText);
+      //Evento click en el dom para terminar el texto
+      this.caja.nativeElement.addEventListener('click', () => {
+        this.completeText();
+      });
+    }
+    
   }
 
   completeText() {
     if (this.typedInstance) {
-      if (this.typedInstance) {
         this.typedInstance.stop(); // Detiene la animación actual
         this.typedInstance.destroy(); // Destruye la instancia actual
         this.caja.nativeElement.innerText = this.optionsBoxText.strings?.[0] || ""; // Muestra todo el texto
-
-      }
       
     }
   }    
+
+
 }

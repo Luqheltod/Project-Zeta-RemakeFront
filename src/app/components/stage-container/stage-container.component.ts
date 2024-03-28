@@ -30,7 +30,7 @@ export class StageContainerComponent {
 
   constructor( public stageRepository: StageRepository) { }
 
-  stage! : Stage ;
+  //stage! : Stage ;
   
   ngOnInit() {
 
@@ -47,76 +47,11 @@ export class StageContainerComponent {
     this.stageRepository.updateStage(this.stage);
     this.stageRepository.setStage(1);
 */
-    console.log(this.stage);
+    //console.log(this.stage);
   }
 
-  stage2 : Stage = {
-    "idStage": 1,
-    "text": "Stage 1",
-    "mapName": "map1.png",
-    "flat": "flat1.png",
-    "options": [
-      {
-        "idOptions": 1,
-        "idStage": 1,
-        "textOption": "Easy  Writing objects: 100% (5/5), 447 bytes | 223.00 KiB/s, done.",
-        "lifedrain": 0,
-        "energydrain": 0,
-        "toStage": 2,
-        "instadeath": false
-      },
-      {
-        "idOptions": 2,
-        "idStage": 1,
-        "textOption": "Normal   Writing objects: 100% (5/5), 447 bytes | 223.00 KiB/s, done.",
-        "lifedrain": 1,
-        "energydrain": 1,
-        "toStage": 3,
-        "instadeath": false
-      },
-      {
-        "idOptions": 3,
-        "idStage": 1,
-        "textOption": "Hard    Writing objects: 100% (5/5), 447 bytes | 223.00 KiB/s, done.Writing objects: 100% (5/5), 447 bytes | 223.00 KiB/s, done.",
-        "lifedrain": 2,
-        "energydrain": 2,
-        "toStage": 4,
-        "instadeath": false
-      }
-    ],
-    "finalStage": false,
-    "restModifier": 1
-  }
-/*
-  options : Option =  [
-    {
-      "idOptions": 1,
-      "idStage": 1,
-      "textOption": "Easy",
-      "lifedrain": 0,
-      "energydrain": 0,
-      "toStage": 2,
-      "instadeath": false
-    },
-    {
-      "idOptions": 2,
-      "idStage": 1,
-      "textOption": "Normal",
-      "lifedrain": 1,
-      "energydrain": 1,
-      "toStage": 3,
-      "instadeath": false
-    },
-    {
-      "idOptions": 3,
-      "idStage": 1,
-      "textOption": "Hard",
-      "lifedrain": 2,
-      "energydrain": 2,
-      "toStage": 4,
-      "instadeath": false
-    }
-  ];*/
+ 
+
 
 
   //Los injects de los servicios 
