@@ -13,13 +13,15 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   styleUrl: './game-text.component.scss'
 })
 export class GameTextComponent {
-
+  //Elemento del dom
   @ViewChild('caja') caja!: ElementRef;
+  //Instancia de Typed
   typedInstance: Typed | undefined
 
   @Input() text!:string;
   textoHtml? : SafeHtml;
-
+  
+  //Opciones de typed
   optionsBoxText: TypedOptions = { };
 
 
@@ -31,6 +33,7 @@ ngOninit(){
 }
 
   ngOnChanges(changes: SimpleChanges){
+    //Cuando cambia el texto, reiniciamos typed
       if(changes['text']){
     var textoSanitizado = this.sanitizer.bypassSecurityTrustHtml(this.text);
     this.textoHtml = textoSanitizado;
@@ -46,7 +49,7 @@ ngOninit(){
     if(this.text.length >0){
       this.optionsBoxText = {
         strings: [this.text],
-        typeSpeed: 2, // Velocidad de escritura (milisegundos)
+        typeSpeed: 20, // Velocidad de escritura (milisegundos)
         showCursor: false, // Ocultar el cursor
         onComplete: (self: Typed) => {
           this.typedInstance = self;

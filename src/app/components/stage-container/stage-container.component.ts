@@ -27,6 +27,8 @@ export class StageContainerComponent {
   
   private readonly stageService = inject(StageService);
  
+  health : number = 120;
+  energy : number = 165;
 
   constructor( public stageRepository: StageRepository) { }
 
@@ -34,7 +36,7 @@ export class StageContainerComponent {
   
   ngOnInit() {
 
-    this.stageService.getStageByIdStageAndTapInElf(1).subscribe();
+    this.stageService.getAndStoreStageById(1).subscribe();
 
     /*this.stageService.getStageByIdStageAndTapInElf(1).subscribe(stage => {
       this.stage = stage;

@@ -13,14 +13,11 @@ import { CommonModule } from '@angular/common';
 })
 export class GameMapComponent {
   locationImg : string ="assets/img/";
-  buttonTestMsg = "";
+  buttonTestMsg = "Mostrar Mapa";
   showMap: boolean = false;
-  @Input() flat : string = 'Piso 3 Habitación 2';
-  @Input() map : string = 'habitacion1.png';
+  @Input() flat! : string;
+  @Input() map! : string;
 
-  ngOnInit() {
-    this.buttonTestMsg = "Mostrar Mapa"
-  }
   toggleMap(){
     this.showMap =!this.showMap;
     this.buttonTestMsg = this.showMap ? "Ocultar Mapa" : "Mostrar Mapa";

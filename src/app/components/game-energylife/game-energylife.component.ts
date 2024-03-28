@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'app-game-energylife',
@@ -9,7 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class GameEnergylifeComponent {
 
+  @Input() health!:number;
+  @Input() energy!:number;
 
-  health:Number=100;
-  energy:Number=100;
 }

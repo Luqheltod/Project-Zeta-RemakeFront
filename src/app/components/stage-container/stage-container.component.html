@@ -1,8 +1,14 @@
 
 
 
-<app-game-map></app-game-map>
-<app-game-energylife></app-game-energylife>
+<app-game-map  
+[map]="stageRepository.mapName$ | async"
+[flat]="stageRepository.flat$ | async">
+</app-game-map>
+<app-game-energylife 
+[energy] = "energy"
+[health] = "health" >
+</app-game-energylife>
 <app-game-text [text]="stageRepository.text$ | async" ></app-game-text>
 <app-game-options [stage]="stageRepository.stage$ | async"></app-game-options>
 

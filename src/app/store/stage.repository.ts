@@ -25,10 +25,10 @@ const stageStore = createStore(
 @Injectable({ providedIn: 'root' })
 export class StageRepository {
 
-  
-
     stage$ = stageStore.pipe(select((stage) => stage));
     text$ = stageStore.pipe(select((stage) => stage.text));
+    mapName$ = stageStore.pipe(select((stage) => stage.mapName));
+    flat$ = stageStore.pipe(select((stage) => stage.flat));
     updateStage(stage: Stage) {
         stageStore.update(setProps(createStage(stage )));
     }
