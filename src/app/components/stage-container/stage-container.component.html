@@ -10,6 +10,10 @@
 [health] = "health" >
 </app-game-energylife>
 <app-game-text [text]="stageRepository.text$ | async" ></app-game-text>
-<app-game-options [stage]="stageRepository.stage$ | async"></app-game-options>
+<app-game-options
+ [stage]="stageRepository.stage$ | async">
+ (energyModifier)="energyModify($event)"
+ (healthModifier)="healthModify($event)"
+</app-game-options>
 
 

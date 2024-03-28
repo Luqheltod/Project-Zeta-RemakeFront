@@ -52,7 +52,44 @@ export class StageContainerComponent {
     //console.log(this.stage);
   }
 
- 
+  energyModify(energyModifier : number){
+    this.energy += energyModifier;
+    if(this.energy<0){
+      this.deathForOption(0)
+    }
+  }
+
+  healthModify(healthModifier : number){
+    this.health += healthModifier;
+    if(this.health<0){
+      this.deathForOption(0)
+    }
+  }
+
+  deathForOption(idOptions : number) {
+   /*
+    this.gameService.getInstadeathInfo(idOptions).subscribe( instadeathInfo => {
+      var message = instadeathInfo.message;
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.disableClose = true;
+      dialogConfig.width = "500px";
+      dialogConfig.height = "541px";
+      dialogConfig.panelClass = "instadeath-dialog-container";
+      
+      
+      dialogConfig.data = {
+        message: message,
+        
+      };
+      this.dialog.open(InstadeathDialogComponent, dialogConfig);
+      this.dialog.afterAllClosed.subscribe( resp =>{
+        localStorage.clear();
+        window.location.reload();
+      })
+    });
+*/
+    console.log(idOptions);
+  }
 
 
 

@@ -8,8 +8,7 @@
 
     @for (option of stage.options; track option.idOptions) {
       <div >
-        <button type="button" class="botonera" >{{option.textOption}}</button> 
-      
+        <button type="button" class="botonera" (click)="nextStage(option)" >{{option.textOption}}</button> 
       </div>
     }
 
