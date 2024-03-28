@@ -46,7 +46,7 @@ ngOninit(){
     if(this.text.length >0){
       this.optionsBoxText = {
         strings: [this.text],
-        typeSpeed: 20, // Velocidad de escritura (milisegundos)
+        typeSpeed: 2, // Velocidad de escritura (milisegundos)
         showCursor: false, // Ocultar el cursor
         onComplete: (self: Typed) => {
           this.typedInstance = self;
@@ -66,7 +66,7 @@ ngOninit(){
     if (this.typedInstance) {
         this.typedInstance.stop(); // Detiene la animación actual
         this.typedInstance.destroy(); // Destruye la instancia actual
-        this.caja.nativeElement.innerText = this.optionsBoxText.strings?.[0] || ""; // Muestra todo el texto
+        this.caja.nativeElement.innerHTML = this.optionsBoxText.strings?.[0] || ""; // Muestra todo el texto
       
     }
   }    
