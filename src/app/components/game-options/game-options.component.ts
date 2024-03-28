@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+import { Component, EventEmitter, Input, Output, SimpleChanges, inject } from '@angular/core';
 import { Option } from '../../models/option';
 import { Stage } from '../../models/stage';
 import { StageRepository } from '../../store/stage.repository';
@@ -13,7 +13,8 @@ import { StageService } from '../../service/stage.service';
   styleUrl: './game-options.component.scss'
 })
 export class GameOptionsComponent {
-
+ 
+  disabled : boolean = false ;
   
 
   @Input() stage!:Stage;
@@ -22,15 +23,20 @@ export class GameOptionsComponent {
   @Output() energyModifier: EventEmitter<number> = new EventEmitter();
  // @Output() instadeath : EventEmitter<number> = new EventEmitter();
 
-  buttonTestMsg = "";
+  buttonTestMsg = "Mostrar Acciones";
   showActions: boolean = false;
 
   private readonly stageService = inject(StageService);
 
   constructor( public stageRepository: StageRepository) { }
-  ngOnInit() {
-    this.buttonTestMsg = "Mostrar Acciones"
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if(changes['stage']){
+      this.disabled = false;
+      this.showActions = false;
+    }
   }
+
   toggleActions(){
     if(!this.showActions){
     this.showActions =!this.showActions;
