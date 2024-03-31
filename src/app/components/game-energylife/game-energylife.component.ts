@@ -25,6 +25,8 @@ export class GameEnergylifeComponent {
 
   disabled:boolean = false;
   flatOfRest : string = "";
+  
+   
 
   stage!: Stage;
   restInfo! : RestInfo | undefined;
@@ -51,8 +53,9 @@ export class GameEnergylifeComponent {
     if(this.disabled){
       return;
     }
-
-    this.flatOfRest = this.flat;
+   // Utilizamos match para buscar la primera secuencia de caracteres que no sean números, grabamos el piso de descanso
+    const match = this.flat.match(/^.*?\d/);
+    this.flatOfRest =match ? match[0].trim() : "";
 
     this.gameService.rest(this.stage.restModifier).subscribe(restInfo => {
       this.restInfo = restInfo
@@ -81,8 +84,8 @@ export class GameEnergylifeComponent {
 /** Si es un piso distinto al cual descansó, permitimos descansar */
  allowedToRest(flat:string) : boolean {
    // Utilizamos match para buscar la primera secuencia de caracteres que no sean números
-   const match = flat.match(/^[^\d]+/);
-  // Utilizamos una expresión regular para extraer el texto hasta el primer número
+   const match = flat.match(/^.*?\d/);
+  // Utilizamos una expresión regular para extraer el texto hasta el primer número, obtenemos el piso actual
    const actualFlat = match ? match[0].trim() : "";
    const esVestibulo = actualFlat.toLowerCase() === 'vestibulo';
 
