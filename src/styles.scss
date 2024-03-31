@@ -15,3 +15,41 @@ body{
     --color-zeta-rojo:#b30c0c;
     --color-texto:rgba(239, 242, 239, 0.943);
 }
+
+.instadeath-dialog-container {
+    border: 1px solid var(--color-zeta-rojo);
+    background-color: var(--color-zeta-rojo);
+    padding: 1px; /* Agregamos un padding para separar el contenido del borde */
+    box-sizing: border-box; /* Incluimos el padding en el cálculo de la anchura */
+    text-align: center;
+    overflow: none;
+  }
+
+
+  html, body{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+   }
+
+
+   .boton-toggle {
+    border-top: none;
+    border-left: none;
+    cursor: pointer;
+    padding: 6px 25px;
+    border-radius: 5px;
+    background-color: var(--color-zeta-rojo);
+    color: var(--color-texto);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+  }
+  
+  .boton-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }

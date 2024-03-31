@@ -1,6 +1,6 @@
 .caja-con-scroll {
   margin: auto;
-  max-height: calc(100vh - 260px);
+  max-height: calc(84vh - 260px);
   max-width: 1500px;
   color: var(--color-texto);
   padding: 8px;
@@ -16,3 +16,25 @@
  
   }
   
+.caja-con-scroll::-webkit-scrollbar {
+    display: block;
+    width: 6px;
+}
+.caja-con-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+    
+.caja-con-scroll::-webkit-scrollbar-thumb {
+    background-color:#1320ad;
+    border-radius: 4px;
+}
+
+.caja-con-scroll::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    margin-bottom: 75px; 
+}
+
+.caja-con-scroll::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    margin-top: 75px;
+}

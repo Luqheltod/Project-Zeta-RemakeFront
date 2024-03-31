@@ -1,17 +1,17 @@
 <div class="centrar">
-    <button class="boton-actions" (click)="toggleActions()">{{buttonTestMsg}}</button>
+    <button class="boton-toggle" (click)="toggleActions()">{{buttonTestMsg}}</button>
   </div>
 
 
 
   @if (showActions) {
-
+    <div class="button-container">
     @for (option of stage.options; track option.idOptions) {
-      <div >
+      
         <button type="button" class="botonera" (click)="nextStage(option)" >{{option.textOption}}</button> 
-      </div>
+      
     }
-
+  </div>
     
   }
 

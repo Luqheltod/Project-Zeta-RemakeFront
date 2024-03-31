@@ -5,28 +5,35 @@
     
   }
   
-  .boton-actions {
-    border-top: none;
-    border-left: none;
-    cursor: pointer;
-    padding: 10px 25px;
-    border-radius: 5px;
-    background-color: var(--color-zeta-rojo);
-    color: var(--color-texto);
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-decoration: none;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
-  }
-  
-  .boton-actions:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  @media only screen and (max-width: 767px){
+  .button-container {
+    max-height: 35vh;
+    overflow-y: auto;
   }
 
+  .button-container::-webkit-scrollbar {
+    display: block;
+    width: 6px;
+}
+.button-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+    
+.button-container::-webkit-scrollbar-thumb {
+    background-color:#1320ad;
+    border-radius: 4px;
+}
 
+.button-container::-webkit-scrollbar-track-piece:end {
+   
+    margin-bottom: 75px; 
+}
+
+.button-container::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    margin-top: 75px;
+}
+  }
 .botonera{
     cursor: pointer;
     text-align: left;
@@ -36,7 +43,7 @@
     margin-right: auto;
     margin-top:2%;
     margin-bottom: 2%;
-    padding:1%;
+    padding:5px;
     background-color: #8B271F;
     overflow: overlay;
 }

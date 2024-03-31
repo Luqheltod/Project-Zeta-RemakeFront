@@ -1,10 +1,10 @@
 import { Component, Inject, inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogActions, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-instadeath-dialog',
   standalone: true,
-  imports: [],
+  imports: [MatDialogActions],
   templateUrl: './instadeath-dialog.component.html',
   styleUrl: './instadeath-dialog.component.scss'
 })

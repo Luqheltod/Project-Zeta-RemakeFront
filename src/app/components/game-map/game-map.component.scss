@@ -5,28 +5,6 @@
     
   }
   
-  .boton-mapa {
-    border-top: none;
-    border-left: none;
-    cursor: grabbing;
-    padding: 10px 25px;
-    border-radius: 5px;
-    background-color: var(--color-zeta-rojo);
-    color: var(--color-texto);
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-decoration: none;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
-  }
-  
-  .boton-mapa:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  }
-
-
   .center-container {
     display: flex;
     justify-content: center;

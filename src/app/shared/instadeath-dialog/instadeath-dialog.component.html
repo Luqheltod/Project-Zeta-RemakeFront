@@ -1,1 +1,15 @@
-<p>instadeath-dialog works!</p>
+
+
+
+    <div class="box-instadeath">
+      <img class="skull" src="assets/img/skull.jpg">
+      <h2 class="box-title">HAS MUERTO</h2>
+      <hr>
+      <div class="death-text">
+        <p [innerHTML]="message"></p>
+      </div>
+      
+      <mat-dialog-actions>
+        <button class="restart-button" (click)="close()">Volver a empezar</button>
+      </mat-dialog-actions>
+    </div>

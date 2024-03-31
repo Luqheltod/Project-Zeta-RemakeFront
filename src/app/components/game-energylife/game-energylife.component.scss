@@ -4,6 +4,18 @@
     cursor:not-allowed;
 }
 
+.rest-button {
+    border: 1px solid #a0a0a0; /* Borde de 1px sólido gris */
+    background-color: #e0e0ff; /* Fondo azul claro */
+    padding: 8px 12px; /* Ajuste de espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+    color: #025538; /* Color de texto */
+    cursor: pointer;
+  }
+  
+  .rest-button:hover {
+    background-color: #ccd9ff; /* Cambio de color de fondo al pasar el ratón */
+  }
 .restbutton{
     cursor: cell;
     position:fixed;
@@ -14,3 +26,36 @@
 .restbutton:hover {
     opacity: 0.5 !important;
   }
+
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .icon-aqua {
+    color: aqua;
+  }
+  
+  .icon-red {
+    color: red;
+  }
+  
+  .icon-gray {
+    color: gray;
+  }
+  
+  .rest-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  @media only screen and (min-width: 767px){
+  .energy{
+margin-left: 244px;
+  }
+
+  .health{
+margin-right: 260px;
+  }
+}

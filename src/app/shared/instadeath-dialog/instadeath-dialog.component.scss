@@ -1,0 +1,76 @@
+
+.box-instadeath {
+    background-color: var(--color-fondo);
+    height: 100%;
+  }
+  
+  .skull {
+    display: block;
+    margin: 0 auto;
+    height: fit-content;
+    max-width: 177px;
+    margin-bottom: 20px;
+  }
+  
+  .box-title {
+    color: var(--color-zeta-rojo);
+    text-align: center;
+  }
+
+  .death-text {
+    height: 253px;
+    overflow-y: auto; /* Agregamos scroll vertical si el contenido excede la altura */
+    color: var(--color-texto);
+    text-align: center;
+  }
+  
+  .box-instadeath hr {
+    margin: 20px 0;
+  }
+  
+  .box-instadeath p {
+    color: var(--color-texto);
+    text-align: center;
+  }
+  
+  .mat-dialog-actions {
+    text-align: center;
+    display: flex; /* Agregado */
+    justify-content: center; /* Agregado */
+    margin-top: 20px;
+  }
+  
+  .restart-button {
+    margin: auto;
+    background-color: cornsilk;
+    border-radius: 20px;
+
+    color:black;
+  }
+  
+  .restart-button:hover {
+    background-color: darkred;
+  }
+
+.death-text::-webkit-scrollbar {
+    display: block;
+    width: 6px;
+}
+.death-text::-webkit-scrollbar-track {
+    background: transparent;
+}
+    
+.death-text::-webkit-scrollbar-thumb {
+    background-color:#1320ad;
+    border-radius: 4px;
+}
+
+.death-text::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    margin-bottom: 75px; 
+}
+
+.death-text::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    margin-top: 75px;
+}
