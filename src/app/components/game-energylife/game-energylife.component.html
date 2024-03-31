@@ -1,7 +1,7 @@
 <p class="flex-container">
     <span class="energy">Energía: <mat-icon class="icon-aqua">flash_on</mat-icon> {{energy}}</span>
-    <button class="rest-button">
-        <mat-icon class="icon-gray">hotel</mat-icon> Descansar
+    <button (click)="rest()" matTooltip="Solo puedes descansar una vez por habitación" [matTooltipDisabled]="!disabled" matTooltipClass="rest" class="rest-button" [ngClass]="{'disable': (disabled) }">
+        <mat-icon class="icon-green" [ngClass]="{'icon-gray': (disabled) }" >hotel</mat-icon> Descansar
       </button>
     <span class="health">Vida: <mat-icon class="icon-red">favorite</mat-icon> {{health}}</span>
   </p>

@@ -1,31 +1,22 @@
 .disable{
-    color: grey;
-    background-color: black;
-    cursor:not-allowed;
+    color: grey !important;
+    background-color: black !important;
+    cursor:not-allowed !important;
 }
 
 .rest-button {
-    border: 1px solid #a0a0a0; /* Borde de 1px sólido gris */
-    background-color: #e0e0ff; /* Fondo azul claro */
-    padding: 8px 12px; /* Ajuste de espaciado interno */
-    border-radius: 4px; /* Bordes redondeados */
-    color: #025538; /* Color de texto */
+    border: 1px solid #a0a0a0;
+    background-color: #e0e0ff; 
+    padding: 8px 12px;
+    border-radius: 4px; 
+    color: #025538; 
     cursor: pointer;
   }
   
   .rest-button:hover {
     background-color: #ccd9ff; /* Cambio de color de fondo al pasar el ratón */
   }
-.restbutton{
-    cursor: cell;
-    position:fixed;
-    top:20px;
-    left: 250px;
-    
-}
-.restbutton:hover {
-    opacity: 0.5 !important;
-  }
+
 
   .flex-container {
     display: flex;
@@ -41,9 +32,11 @@
   }
   
   .icon-gray {
-    color: gray;
+    color: gray !important;
   }
-  
+  .icon-green{
+    color: #025538; 
+  }
   .rest-button {
     border: none;
     background: none;

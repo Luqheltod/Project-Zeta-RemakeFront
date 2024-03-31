@@ -31,9 +31,6 @@ export class GameOptionsComponent {
 
   private readonly stageService = inject(StageService);
 
-  constructor( public stageRepository: StageRepository) {
-   
-   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if(changes['stage']){

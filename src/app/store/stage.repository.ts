@@ -3,6 +3,7 @@ import { selectAllEntities, selectEntity, selectFirst, setEntities, withEntities
 import { Stage, createStage } from '../models/stage';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 
 
@@ -33,12 +34,9 @@ export class StageRepository {
         stageStore.update(setProps(createStage(stage )));
     }
 
-    getActualStage(): Stage {
-
-      return stageStore.getValue();
-       /* stageStore.subscribe((stage) => {
-         return stage;
-          });*/
+    getActualStage(): Observable<Stage> {   
+      return stageStore.pipe(select((stage) => stage));
+      
 }
 
 }
