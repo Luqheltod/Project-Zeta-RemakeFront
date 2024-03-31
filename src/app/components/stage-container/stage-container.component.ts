@@ -3,7 +3,8 @@ import { GameMapComponent } from '../game-map/game-map.component';
 import { GameTextComponent } from '../game-text/game-text.component';
 import { GameOptionsComponent } from '../game-options/game-options.component';
 import { CommonModule } from '@angular/common';
-
+import {MatDialog, MatDialogConfig, MatDialogModule} from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { GameEnergylifeComponent } from '../game-energylife/game-energylife.component';
 import { slideInAnimation } from '../../shared/animation';
@@ -11,6 +12,8 @@ import { Stage } from '../../models/stage';
 import { Option } from '../../models/option';
 import { StageRepository } from '../../store/stage.repository';
 import { StageService } from '../../service/stage.service';
+import { InstadeathDialogComponent } from '../../shared/instadeath-dialog/instadeath-dialog.component';
+import { GameService } from '../../service/game.service';
 
 @Component({
   selector: 'app-stage-container',
@@ -26,30 +29,20 @@ import { StageService } from '../../service/stage.service';
 export class StageContainerComponent {
   
   private readonly stageService = inject(StageService);
- 
+  private readonly gameService = inject(GameService);
+
+  constructor( public stageRepository: StageRepository,public dialog: MatDialog) { }
+
+
   health : number = 120;
   energy : number = 165;
-
-  constructor( public stageRepository: StageRepository) { }
-
   //stage! : Stage ;
   
   ngOnInit() {
 
     this.stageService.getAndStoreStageById(1).subscribe();
 
-    /*this.stageService.getStageByIdStageAndTapInElf(1).subscribe(stage => {
-      this.stage = stage;
-      this.stageRepository.updateStage(this.stage);
-      this.stageRepository.getStage();
-    });*/
-
-   /* this.stageService.getStageByIdStageAndTapInElf(1).subscribe(stage => this.stage = stage);
-    
-    this.stageRepository.updateStage(this.stage);
-    this.stageRepository.setStage(1);
-*/
-    //console.log(this.stage);
+  
   }
 
   energyModify(energyModifier : number){
@@ -67,7 +60,7 @@ export class StageContainerComponent {
   }
 
   deathForOption(idOptions : number) {
-   /*
+   
     this.gameService.getInstadeathInfo(idOptions).subscribe( instadeathInfo => {
       var message = instadeathInfo.message;
       const dialogConfig = new MatDialogConfig();
@@ -87,7 +80,7 @@ export class StageContainerComponent {
         window.location.reload();
       })
     });
-*/
+
     console.log(idOptions);
   }
 

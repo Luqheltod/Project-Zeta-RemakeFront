@@ -21,7 +21,7 @@ export class GameOptionsComponent {
 
   @Output() healthModifier: EventEmitter<number> = new EventEmitter();
   @Output() energyModifier: EventEmitter<number> = new EventEmitter();
- // @Output() instadeath : EventEmitter<number> = new EventEmitter();
+  @Output() instadeath : EventEmitter<number> = new EventEmitter();
 
   buttonTestMsg = "Mostrar Acciones";
   showActions: boolean = false;
