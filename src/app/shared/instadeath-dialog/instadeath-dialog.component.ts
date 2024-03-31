@@ -6,7 +6,8 @@ import { MAT_DIALOG_DATA, MatDialogActions, MatDialogRef } from '@angular/materi
   standalone: true,
   imports: [MatDialogActions],
   templateUrl: './instadeath-dialog.component.html',
-  styleUrl: './instadeath-dialog.component.scss'
+  styleUrl: './instadeath-dialog.component.scss',
+  
 })
 export class InstadeathDialogComponent {
   

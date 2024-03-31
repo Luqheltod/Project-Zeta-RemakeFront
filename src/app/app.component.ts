@@ -17,7 +17,7 @@ import { slideInAnimation } from './shared/animation';
   imports: [RouterOutlet,RouterLink, HeaderComponent],
   animations: [
     slideInAnimation,
-    // animation triggers go here
+   
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

@@ -18,7 +18,7 @@ body{
 
 .instadeath-dialog-container {
     border: 1px solid var(--color-zeta-rojo);
-    background-color: var(--color-zeta-rojo);
+    background-color: #4d1b1b;
     padding: 1px; /* Agregamos un padding para separar el contenido del borde */
     box-sizing: border-box; /* Incluimos el padding en el cálculo de la anchura */
     text-align: center;
@@ -36,7 +36,7 @@ body{
    .boton-toggle {
     border-top: none;
     border-left: none;
-    cursor: pointer;
+    cursor: grab;
     padding: 6px 25px;
     border-radius: 5px;
     background-color: var(--color-zeta-rojo);

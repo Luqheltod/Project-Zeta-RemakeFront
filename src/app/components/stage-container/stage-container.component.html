@@ -1,6 +1,6 @@
 
 
-
+@if (!playerIsDeath) {
 <app-game-map  
 [map]="stageRepository.mapName$ | async"
 [flat]="stageRepository.flat$ | async">
@@ -19,6 +19,4 @@
  (healthModifier)="healthModify($event)"
  (instadeath)="deathForOption($event)"
  ></app-game-options>
-
-
-
+}

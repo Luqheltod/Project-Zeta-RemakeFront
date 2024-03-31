@@ -14,11 +14,12 @@ import { StageRepository } from '../../store/stage.repository';
 import { StageService } from '../../service/stage.service';
 import { InstadeathDialogComponent } from '../../shared/instadeath-dialog/instadeath-dialog.component';
 import { GameService } from '../../service/game.service';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-stage-container',
   standalone: true,
-  imports: [GameMapComponent,GameTextComponent,GameOptionsComponent,CommonModule,GameEnergylifeComponent],
+  imports: [GameMapComponent,GameTextComponent,GameOptionsComponent,CommonModule,GameEnergylifeComponent,RouterModule],
   animations: [
     slideInAnimation,
     // animation triggers go here
@@ -31,12 +32,12 @@ export class StageContainerComponent {
   private readonly stageService = inject(StageService);
   private readonly gameService = inject(GameService);
 
-  constructor( public stageRepository: StageRepository,public dialog: MatDialog) { }
+  constructor( public stageRepository: StageRepository,public dialog: MatDialog,private router: Router) { }
 
 
   health : number = 120;
   energy : number = 165;
-  //stage! : Stage ;
+  playerIsDeath : boolean = false;
   
   ngOnInit() {
 
@@ -65,6 +66,8 @@ export class StageContainerComponent {
     this.gameService.getInstadeathInfo(idOptions).subscribe( instadeathInfo => {
       var message = instadeathInfo.message;
       const dialogConfig = new MatDialogConfig();
+      dialogConfig.enterAnimationDuration='2500ms';
+      dialogConfig.exitAnimationDuration='1500ms';
       dialogConfig.disableClose = true;
       dialogConfig.width = "500px";
       dialogConfig.height = "541px";
@@ -78,20 +81,15 @@ export class StageContainerComponent {
       this.dialog.open(InstadeathDialogComponent, dialogConfig);
       this.dialog.afterAllClosed.subscribe( resp =>{
         localStorage.clear();
-        window.location.reload();
+        this.router.navigate(['/']);
       })
     });
-
-    console.log(idOptions);
+      this.playerIsDeath = true;
+ 
   }
 
 
 
-  //Los injects de los servicios 
-
-  //Llamamos akita con cada cosa 
-
-  //recibimos las movidas de vuelta de cada componente y se cambian lo que le pasamos
 
 
 
