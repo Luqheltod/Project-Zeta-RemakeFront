@@ -59,8 +59,9 @@ export class StageContainerComponent {
     }
   }
 
+
+
   deathForOption(idOptions : number) {
-   
     this.gameService.getInstadeathInfo(idOptions).subscribe( instadeathInfo => {
       var message = instadeathInfo.message;
       const dialogConfig = new MatDialogConfig();

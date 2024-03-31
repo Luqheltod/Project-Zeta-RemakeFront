@@ -3,12 +3,13 @@ import { Option } from '../../models/option';
 import { Stage } from '../../models/stage';
 import { StageRepository } from '../../store/stage.repository';
 import { StageService } from '../../service/stage.service';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-game-options',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './game-options.component.html',
   styleUrl: './game-options.component.scss'
 })
@@ -19,16 +20,20 @@ export class GameOptionsComponent {
 
   @Input() stage!:Stage;
 
-  @Output() healthModifier: EventEmitter<number> = new EventEmitter();
-  @Output() energyModifier: EventEmitter<number> = new EventEmitter();
-  @Output() instadeath : EventEmitter<number> = new EventEmitter();
+  @Output() healthModifier: EventEmitter<number> = new EventEmitter<number>();
+  @Output() energyModifier: EventEmitter<number> = new EventEmitter<number>();
+  @Output() instadeath : EventEmitter<number> = new EventEmitter<number>();
+
+  
 
   buttonTestMsg = "Mostrar Acciones";
   showActions: boolean = false;
 
   private readonly stageService = inject(StageService);
 
-  constructor( public stageRepository: StageRepository) { }
+  constructor( public stageRepository: StageRepository) {
+   
+   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if(changes['stage']){
@@ -48,7 +53,7 @@ export class GameOptionsComponent {
 
     if(option.instadeath) {
       
-      //this.instadeath.emit(option.idOptions);
+      this.instadeath.emit(option.idOptions);
       return;
     }
 

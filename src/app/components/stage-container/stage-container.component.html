@@ -11,10 +11,11 @@
 </app-game-energylife>
 <app-game-text [text]="stageRepository.text$ | async" ></app-game-text>
 <app-game-options
- [stage]="stageRepository.stage$ | async">
+ [stage]="stageRepository.stage$ | async"
  (energyModifier)="energyModify($event)"
  (healthModifier)="healthModify($event)"
  (instadeath)="deathForOption($event)"
-</app-game-options>
+ ></app-game-options>
+
 
 
