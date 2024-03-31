@@ -5,7 +5,10 @@
 [map]="stageRepository.mapName$ | async"
 [flat]="stageRepository.flat$ | async">
 </app-game-map>
-<app-game-energylife 
+<app-game-energylife
+[flat]="stageRepository.flat$ | async"
+(energyModifier)="energyModify($event)"
+(healthModifier)="healthModify($event)" 
 [energy] = "energy"
 [health] = "health" >
 </app-game-energylife>
